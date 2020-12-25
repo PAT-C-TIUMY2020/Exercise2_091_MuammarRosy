@@ -13,11 +13,11 @@ namespace Service
     {
 
         SqlConnection sqlConnection;
-        string connectionString = "Data Source = TEPOS; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = setan123";
+        string connectionString = "Data Source=DESKTOP-4ON24VD\\MUAMMARSQL;Initial Catalog= TI UMY ;Persist Security Info=True;User ID=sa; Password=muammar310";
         public string CountMahasiswa()
         {
             string msg = "gagal";
-            SqlConnection sqlcon = new SqlConnection("Data Source = TEPOS; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = setan123");
+            SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-4ON24VD\\MUAMMARSQL;Initial Catalog= TI UMY ;Persist Security Info=True;User ID=sa; Password=muammar310");
             string query = String.Format("select Count(NIM) From Mahasiswa");
             
             SqlCommand sqlcom = new SqlCommand(query, sqlcon);
@@ -44,7 +44,7 @@ namespace Service
         public string CreateMahasiswa(Mahasiswa mhs)
         {
             string msg = "GAGAL";
-            SqlConnection sqlcon = new SqlConnection("Data Source = TEPOS; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = setan123");
+            SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-4ON24VD\\MUAMMARSQL;Initial Catalog= TI UMY ;Persist Security Info=True;User ID=sa; Password=muammar310");
             string query = String.Format("insert into Mahasiswa values ('{0}','{1}','{2}','{3}')", mhs.nama, mhs.nim, mhs.prodi, mhs.angkatan);
             SqlCommand sqlcom = new SqlCommand(query, sqlcon);
             try
@@ -130,7 +130,7 @@ namespace Service
         public Mahasiswa GetMahasiswaByNIM(string nim)
         {
             Mahasiswa mhs = new Mahasiswa();
-            SqlConnection con = new SqlConnection("Data Source = TEPOS; Initial Catalog = TI UMY; Persist Security Info = True; User ID = sa; Password = setan123");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-4ON24VD\\MUAMMARSQL;Initial Catalog= TI UMY ;Persist Security Info=True;User ID=sa; Password=muammar310");
             string query = String.Format("select Nama, NIM, Prodi, Angkatan from Mahasiswa where NIM = '{0}'", nim);
             SqlCommand com = new SqlCommand(query, con);
 
